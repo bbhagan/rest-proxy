@@ -5,7 +5,7 @@ const port = 3000;
 
 
 app.get('/proxy', async (request, response, next) => {
-    
+    response.setHeader('Access-Control-Allow-Origin', '*')
     try {
         const serviceResponse = await fetch(request.query.url);
         const json = await serviceResponse.json();
